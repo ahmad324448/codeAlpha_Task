@@ -1,0 +1,74 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9e9dd;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.recipe-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.prep-time {
+  background-color: #fff0f6;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.prep-time h3 {
+  margin-top: 0;
+  color: #290314;
+}
+
+ul, ol {
+  padding-left: 20px;
+}
+
+.ingredients li, .instructions li {
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #610606;
+  margin-top: 30px;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.nutrition-table th, .nutrition-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.nutrition-table th {
+  background-color: #f5f5f5;
+  color: #333;
+}
