@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <h2>✅ TASK 1: AGE CALCULATOR</h2>
+
+  <p><strong>Objective:</strong><br>
+    Create a web-based age calculator using JavaScript.</p>
+
+  <p><strong>Features:</strong><br>
+    • User inputs Date of Birth (day, month, year).<br>
+    • Output shows calculated age in years, months, and days.</p>
+
+  <p><strong>Tech Stack:</strong><br>
+    • HTML for the input form<br>
+    • CSS for styling<br>
+    • JavaScript for age calculation using <span style="color:green">Date</span> object</p>
+
+  <form onsubmit="calculateAge(); return false;">
+    <label for="day">Day:</label>
+    <input type="number" id="day" min="1" max="31" required>
+
+    <label for="month">Month:</label>
+    <input type="number" id="month" min="1" max="12" required>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" min="1900" required>
+
+    <button type="submit">Calculate Age</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateAge() {
+      const day = parseInt(document.getElementById("day").value);
+      const month = parseInt(document.getElementById("month").value) - 1; 
+      const year = parseInt(document.getElementById("year").value);
+
+      const birthDate = new Date(year, month, day);
+      const today = new Date();
+
+      if (birthDate > today) {
+        document.getElementById("result").innerText = "Invalid Date of Birth";
+        return;
+      }
+
+      let ageYears = today.getFullYear() - birthDate.getFullYear();
+      let ageMonths = today.getMonth() - birthDate.getMonth();
+      let ageDays = today.getDate() - birthDate.getDate();
+
+      if (ageDays < 0) {
+        ageMonths--;
+        const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+        ageDays += previousMonth.getDate();
+      }
+
+      if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+      }
+
+      document.getElementById("result").innerText = 
+    `You are ${ageYears} years, ${ageMonths} months, and ${ageDays} days old`;
+
+    }
+  </script>
+</body>
+</html>
